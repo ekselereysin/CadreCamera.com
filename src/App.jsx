@@ -50,7 +50,7 @@ function Navbar() {
 // ─── Hero ─────────────────────────────────────────────────────────────────────
 function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden">
+    <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-x-hidden pb-16">
       {/* Gradient halo */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -64,7 +64,7 @@ function Hero() {
       {/* Content */}
       <div className="relative z-10 max-w-3xl mx-auto">
         <div className="inline-flex items-center gap-2 mb-8 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-sm text-white/60">
-          <span className="text-yellow-400">★★★★★</span>
+          <span className="text-yellow-400" aria-label="5 stars">★★★★★</span>
           <span>Photography</span>
         </div>
 
@@ -90,7 +90,7 @@ function Hero() {
       </div>
 
       {/* Phone mockups */}
-      <div className="relative z-10 mt-20 flex items-end justify-center gap-4 sm:gap-6">
+      <div className="relative z-10 mt-20 flex items-end justify-center gap-2 sm:gap-6">
         {[
           { rotate: '-6deg', label: 'Mini' },
           { rotate: '0deg',  label: 'Square' },
@@ -100,14 +100,14 @@ function Hero() {
             key={label}
             className="flex flex-col items-center justify-center gap-2 bg-dark-photo border border-dark-photoborder text-white/20"
             style={{
-              width: 120,
+              width: 'clamp(90px, 28vw, 140px)',
               aspectRatio: '9 / 19.5',
-              borderRadius: 28,
+              borderRadius: 'clamp(20px, 4vw, 28px)',
               transform: `rotate(${rotate})`,
               boxShadow: '0 32px 64px rgba(0,0,0,0.6)',
             }}
           >
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
               <rect x="3" y="3" width="18" height="18" rx="2" />
             </svg>
             <span className="text-xs">{label}</span>
