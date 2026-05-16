@@ -4,7 +4,7 @@ const BAR_COLORS = ['#E24B4A', '#EF9F27', '#639922', '#378ADD', '#7F77DD']
 function CadreLogo({ small = false }) {
   const barH = small ? 14 : 20
   const barW = small ? 3.5 : 5
-  const gap = small ? 3 : 4
+  const gap = small ? '3px' : '4px'
   const fontSize = small ? 'text-sm' : 'text-lg'
 
   return (
@@ -12,7 +12,7 @@ function CadreLogo({ small = false }) {
       <div className="flex items-center" style={{ gap }}>
         {BAR_COLORS.map((color, i) => (
           <div
-            key={i}
+            key={color}
             style={{
               width: barW,
               height: barH,
@@ -37,7 +37,7 @@ function Navbar() {
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <CadreLogo />
         <a
-          href="#"
+          href="#" {/* TODO: replace with App Store URL before launch */}
           className="px-4 py-2 text-sm font-medium text-white border border-white/30 rounded-lg hover:bg-white/10 transition-colors"
         >
           Download
