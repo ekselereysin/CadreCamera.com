@@ -1,4 +1,4 @@
-import { Sparkles, LayoutGrid, Square, Camera, SlidersHorizontal, Share2, ImageIcon } from 'lucide-react'
+import { Sparkles, LayoutGrid, Square, Camera, SlidersHorizontal, Share2, ImageIcon, Twitter, Instagram, Mail } from 'lucide-react'
 
 // ─── Logo ────────────────────────────────────────────────────────────────────
 const BAR_COLORS = ['#E24B4A', '#EF9F27', '#639922', '#378ADD', '#7F77DD']
@@ -281,6 +281,42 @@ function Screenshots() {
   )
 }
 
+// ─── Footer ───────────────────────────────────────────────────────────────────
+function Footer() {
+  return (
+    <footer className="border-t border-dark-border py-10 px-6">
+      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+        <CadreLogo small />
+
+        <p className="text-white/30 text-sm text-center">
+          © 2026 Cadre · cadrecamera.com
+        </p>
+
+        <div className="flex items-center gap-4">
+          {[
+            { Icon: Twitter,   label: 'Twitter' },
+            { Icon: Instagram, label: 'Instagram' },
+            { Icon: Mail,      label: 'Email' },
+          ].map(({ Icon, label }) => (
+            <a
+              key={label}
+              href="#"
+              aria-label={label}
+              className="text-white/30 hover:text-white transition-colors"
+            >
+              <Icon size={18} strokeWidth={1.75} />
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <p className="text-center text-white/20 text-xs mt-8">
+        Made with ❤️ for analog souls.
+      </p>
+    </footer>
+  )
+}
+
 // ─── App ─────────────────────────────────────────────────────────────────────
 export default function App() {
   return (
@@ -290,6 +326,7 @@ export default function App() {
       <Features />
       <HowItWorks />
       <Screenshots />
+      <Footer />
     </div>
   )
 }
