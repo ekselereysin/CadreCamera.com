@@ -12,7 +12,7 @@ function CadreLogo({ small = false }) {
   return (
     <div className="flex items-center gap-2">
       <div className="flex items-center" style={{ gap }}>
-        {BAR_COLORS.map((color, i) => (
+        {BAR_COLORS.map((color) => (
           <div
             key={color}
             style={{
@@ -42,6 +42,7 @@ function Navbar() {
           href="#"
           className="px-4 py-2 text-sm font-medium text-white border border-white/30 rounded-lg hover:bg-white/10 transition-colors"
         >
+          {/* TODO: replace with App Store URL before launch */}
           Download
         </a>
       </div>
@@ -328,10 +329,12 @@ export default function App() {
   return (
     <div className="min-h-screen bg-dark-page text-white">
       <Navbar />
-      <Hero />
-      <Features />
-      <HowItWorks />
-      <Screenshots />
+      <main>
+        <Hero />
+        <Features />
+        <HowItWorks />
+        <Screenshots />
+      </main>
       <Footer />
     </div>
   )
