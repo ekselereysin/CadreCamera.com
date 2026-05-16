@@ -1,3 +1,5 @@
+import { Sparkles, LayoutGrid, Square } from 'lucide-react'
+
 // ─── Logo ────────────────────────────────────────────────────────────────────
 const BAR_COLORS = ['#E24B4A', '#EF9F27', '#639922', '#378ADD', '#7F77DD']
 
@@ -118,12 +120,70 @@ function Hero() {
   )
 }
 
+// ─── Features ────────────────────────────────────────────────────────────────
+const FEATURES = [
+  {
+    Icon: Square,
+    color: '#E24B4A',
+    title: 'Analog Frames',
+    tagline: 'Three formats. Eight colors. One tap.',
+    body:
+      'Choose from Mini, Square, or Wide frames — then pick your border color. Every shot feels like it just slid out of the camera.',
+  },
+  {
+    Icon: Sparkles,
+    color: '#EF9F27',
+    title: '50+ Film Filters',
+    tagline: 'Eight curated filter packs. Zero learning curve.',
+    body:
+      'From Film Classics to Cinematic and seasonal moods — dial in the exact look you want, instantly.',
+  },
+  {
+    Icon: LayoutGrid,
+    color: '#378ADD',
+    title: 'Collage Studio',
+    tagline: 'Story. Square. Portrait. Share-ready in seconds.',
+    body:
+      'Arrange your analog shots into polished collages sized perfectly for Instagram, TikTok, and more.',
+  },
+]
+
+function Features() {
+  return (
+    <section className="py-24 px-6">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+        {FEATURES.map(({ Icon, color, title, tagline, body }) => (
+          <div
+            key={title}
+            className="bg-dark-card border border-dark-border rounded-2xl p-8 flex flex-col gap-5"
+          >
+            <div
+              className="w-12 h-12 rounded-xl flex items-center justify-center"
+              style={{ backgroundColor: `${color}20` }}
+            >
+              <Icon size={24} color={color} strokeWidth={1.75} />
+            </div>
+            <div>
+              <h3 className="text-white font-bold text-xl mb-1">{title}</h3>
+              <p className="text-sm font-medium mb-3" style={{ color }}>
+                {tagline}
+              </p>
+              <p className="text-white/50 text-sm leading-relaxed">{body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
+
 // ─── App ─────────────────────────────────────────────────────────────────────
 export default function App() {
   return (
     <div className="min-h-screen bg-dark-page text-white">
       <Navbar />
       <Hero />
+      <Features />
     </div>
   )
 }
