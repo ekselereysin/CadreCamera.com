@@ -1,4 +1,4 @@
-import { Sparkles, LayoutGrid, Square } from 'lucide-react'
+import { Sparkles, LayoutGrid, Square, Camera, SlidersHorizontal, Share2 } from 'lucide-react'
 
 // ─── Logo ────────────────────────────────────────────────────────────────────
 const BAR_COLORS = ['#E24B4A', '#EF9F27', '#639922', '#378ADD', '#7F77DD']
@@ -177,6 +177,69 @@ function Features() {
   )
 }
 
+// ─── How It Works ─────────────────────────────────────────────────────────────
+const STEPS = [
+  {
+    number: '01',
+    color: '#E24B4A',
+    Icon: Camera,
+    title: 'Shoot or Import',
+    body: 'Open Cadre, snap a photo with the live viewfinder — or pull any image from your library.',
+  },
+  {
+    number: '02',
+    color: '#EF9F27',
+    Icon: SlidersHorizontal,
+    title: 'Choose Your Look',
+    body: 'Pick a frame format, dial in your filter pack, and add a handwritten note if the moment calls for it.',
+  },
+  {
+    number: '03',
+    color: '#378ADD',
+    Icon: Share2,
+    title: 'Share the Moment',
+    body: 'Save to your gallery, build a collage, or share directly. Your analog memory, ready for the world.',
+  },
+]
+
+function HowItWorks() {
+  return (
+    <section className="py-24 px-6 bg-dark-mock">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-16">
+          Three steps to your perfect shot.
+        </h2>
+
+        <div className="relative grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6">
+          {/* Connector line — desktop only */}
+          <div
+            className="hidden md:block absolute top-8 left-[calc(16.66%+16px)] right-[calc(16.66%+16px)] h-px bg-dark-border"
+            aria-hidden="true"
+          />
+
+          {STEPS.map(({ number, color, Icon, title, body }) => (
+            <div key={number} className="flex flex-col items-center text-center gap-4 relative">
+              <div
+                className="w-16 h-16 rounded-2xl flex items-center justify-center z-10"
+                style={{ backgroundColor: `${color}18`, border: `1px solid ${color}30` }}
+              >
+                <Icon size={26} color={color} strokeWidth={1.75} />
+              </div>
+              <span className="text-4xl font-extrabold tracking-tighter" style={{ color }}>
+                {number}
+              </span>
+              <div>
+                <h3 className="text-white font-semibold text-lg mb-2">{title}</h3>
+                <p className="text-white/50 text-sm leading-relaxed max-w-xs mx-auto">{body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 // ─── App ─────────────────────────────────────────────────────────────────────
 export default function App() {
   return (
@@ -184,6 +247,7 @@ export default function App() {
       <Navbar />
       <Hero />
       <Features />
+      <HowItWorks />
     </div>
   )
 }
