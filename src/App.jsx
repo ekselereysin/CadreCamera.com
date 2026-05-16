@@ -1,4 +1,4 @@
-import { Sparkles, LayoutGrid, Square, Camera, SlidersHorizontal, Share2, ImageIcon, Twitter, Instagram, Mail } from 'lucide-react'
+import { Sparkles, LayoutGrid, Square, Camera, SlidersHorizontal, Share2, ImageIcon, X, Instagram, Mail } from 'lucide-react'
 
 // ─── Logo ────────────────────────────────────────────────────────────────────
 const BAR_COLORS = ['#E24B4A', '#EF9F27', '#639922', '#378ADD', '#7F77DD']
@@ -151,7 +151,11 @@ const FEATURES = [
 function Features() {
   return (
     <section className="py-24 px-6">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-12">
+          Everything you need.
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {FEATURES.map(({ Icon, color, title, tagline, body }) => (
           <div
             key={title}
@@ -172,6 +176,7 @@ function Features() {
             </div>
           </div>
         ))}
+        </div>
       </div>
     </section>
   )
@@ -243,14 +248,14 @@ function HowItWorks() {
 // ─── Screenshots ──────────────────────────────────────────────────────────────
 function Screenshots() {
   return (
-    <section className="py-24 px-6">
+    <section className="py-24 px-6 overflow-x-hidden">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
             See it in action.
           </h2>
           <p className="text-white/30 text-sm">
-            Drop your screenshots into the placeholders below.
+            Tap into your creativity. See what Cadre makes possible.
           </p>
         </div>
 
@@ -293,8 +298,9 @@ function Footer() {
         </p>
 
         <div className="flex items-center gap-4">
+          {/* TODO: replace with real social URLs */}
           {[
-            { Icon: Twitter,   label: 'Twitter' },
+            { Icon: X,   label: 'X (Twitter)' },
             { Icon: Instagram, label: 'Instagram' },
             { Icon: Mail,      label: 'Email' },
           ].map(({ Icon, label }) => (
