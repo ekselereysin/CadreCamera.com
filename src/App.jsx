@@ -317,9 +317,15 @@ function Footer() {
         </div>
       </div>
 
-      <p className="text-center text-white/20 text-xs mt-8">
-        Made with ❤️ for analog souls.
-      </p>
+      <div className="text-center mt-8 flex flex-col items-center gap-2">
+        <a
+          href="/privacy.html"
+          className="text-white/20 text-xs hover:text-white/50 transition-colors"
+        >
+          Privacy Policy
+        </a>
+        <p className="text-white/20 text-xs">Made with ❤️ for analog souls.</p>
+      </div>
     </footer>
   )
 }

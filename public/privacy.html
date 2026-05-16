@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="description" content="Cadre Privacy Policy — how the app handles your information." />
+    <title>Privacy Policy — Cadre</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href="https://cadrecamera.com/privacy.html" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      :root {
+        --bg:        #0D0D0D;
+        --card:      #141414;
+        --border:    #222222;
+        --text:      #ffffff;
+        --muted:     rgba(255,255,255,0.5);
+        --subtle:    rgba(255,255,255,0.25);
+        --red:       #E24B4A;
+        --orange:    #EF9F27;
+        --green:     #639922;
+        --blue:      #378ADD;
+        --purple:    #7F77DD;
+        --max-w:     680px;
+      }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: 'Inter', system-ui, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        line-height: 1.7;
+      }
+
+      /* ── Nav ── */
+      nav {
+        position: fixed;
+        top: 0; left: 0; right: 0;
+        z-index: 50;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        padding: 0 24px;
+        background: rgba(13,13,13,0.85);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+      }
+
+      .logo-bars {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .logo-bar {
+        width: 5px;
+        height: 20px;
+        border-radius: 2px;
+      }
+
+      .logo-text {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--text);
+        letter-spacing: -0.02em;
+      }
+
+      /* ── Page ── */
+      main {
+        max-width: var(--max-w);
+        margin: 0 auto;
+        padding: 112px 24px 80px;
+      }
+
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 13px;
+        color: var(--subtle);
+        text-decoration: none;
+        margin-bottom: 40px;
+        transition: color 0.15s;
+      }
+      .back-link:hover { color: var(--text); }
+      .back-link::before { content: '←'; }
+
+      h1 {
+        font-size: clamp(28px, 5vw, 40px);
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        color: var(--text);
+        margin-bottom: 8px;
+      }
+
+      .last-updated {
+        font-size: 13px;
+        color: var(--subtle);
+        margin-bottom: 40px;
+      }
+
+      .intro {
+        font-size: 16px;
+        color: var(--muted);
+        margin-bottom: 48px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .section {
+        margin-bottom: 40px;
+      }
+
+      h2 {
+        font-size: 17px;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .section-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 26px;
+        height: 26px;
+        border-radius: 8px;
+        font-size: 12px;
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+
+      .section p {
+        font-size: 15px;
+        color: var(--muted);
+        line-height: 1.75;
+      }
+
+      /* ── Contact card ── */
+      .contact-card {
+        margin-top: 48px;
+        padding: 24px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+      }
+
+      .contact-card p {
+        font-size: 14px;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .contact-card a {
+        color: var(--blue);
+        text-decoration: none;
+        font-weight: 500;
+      }
+      .contact-card a:hover { text-decoration: underline; }
+
+      /* ── Footer ── */
+      footer {
+        border-top: 1px solid var(--border);
+        padding: 32px 24px;
+        text-align: center;
+        font-size: 13px;
+        color: var(--subtle);
+      }
+      footer a { color: var(--subtle); text-decoration: none; }
+      footer a:hover { color: var(--text); }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="/" class="logo" aria-label="Cadre home">
+        <div class="logo-bars" aria-hidden="true">
+          <div class="logo-bar" style="background:#E24B4A"></div>
+          <div class="logo-bar" style="background:#EF9F27"></div>
+          <div class="logo-bar" style="background:#639922"></div>
+          <div class="logo-bar" style="background:#378ADD"></div>
+          <div class="logo-bar" style="background:#7F77DD"></div>
+        </div>
+        <span class="logo-text">Cadre</span>
+      </a>
+    </nav>
+
+    <main>
+      <a href="/" class="back-link">Back to cadrecamera.com</a>
+
+      <h1>Privacy Policy</h1>
+      <p class="last-updated">Last updated: May 2026</p>
+
+      <p class="intro">
+        This policy describes how Cadre ("the app") handles information when you use it.
+        Cadre is a camera and photo-editing app. Unless you explicitly use optional Apple
+        services described below, we do not operate our own servers for your photos or
+        personal content.
+      </p>
+
+      <div class="section">
+        <h2>
+          <span class="section-number" style="background:rgba(226,75,74,0.15);color:#E24B4A">1</span>
+          Data stored on your device
+        </h2>
+        <p>
+          Photos you capture or create in Cadre, notes, filters, frame choices, collage
+          layouts, and app settings are stored locally on your iPhone using standard iOS
+          storage. That content stays on your device unless you choose to back it up through
+          Apple's systems (see below) or share it yourself (for example via the system
+          share sheet).
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>
+          <span class="section-number" style="background:rgba(239,159,39,0.15);color:#EF9F27">2</span>
+          Optional iCloud photo backup
+        </h2>
+        <p>
+          If you turn on iCloud photo backup in Settings, Cadre may copy your saved Cadre
+          photos into your personal iCloud Drive container so they can sync across your
+          devices and follow your iCloud account settings. That uses Apple's iCloud
+          infrastructure; we do not receive a separate copy on our own servers. Whether
+          files upload, how they are encrypted in transit and at rest, and retention are
+          governed by Apple's iCloud terms and your Apple ID settings.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>
+          <span class="section-number" style="background:rgba(99,153,34,0.15);color:#639922">3</span>
+          Photo library import
+        </h2>
+        <p>
+          When you import a photo from your library, iOS grants the app access only to the
+          items you select. Imported images are processed on your device and stored like
+          other Cadre photos. We do not upload your entire photo library to Cadre or to
+          servers we control.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>
+          <span class="section-number" style="background:rgba(55,138,221,0.15);color:#378ADD">4</span>
+          Location
+        </h2>
+        <p>
+          If you allow Camera location access, location data you choose to attach may be
+          stored with your photo metadata locally (and in any iCloud backup copies if that
+          feature is enabled). Cadre does not send that location to analytics or advertising
+          services we operate.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>
+          <span class="section-number" style="background:rgba(127,119,221,0.15);color:#7F77DD">5</span>
+          Cadre Premium (subscriptions)
+        </h2>
+        <p>
+          Cadre Premium is an auto-renewable subscription processed by Apple through your
+          Apple ID. Apple handles payment and renewal; we do not receive your full payment
+          card number. The app uses StoreKit on device to verify whether your Apple ID has
+          an active subscription so premium features can unlock. You can manage or cancel
+          subscriptions in your Apple ID account settings.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>
+          <span class="section-number" style="background:rgba(226,75,74,0.15);color:#E24B4A">6</span>
+          Analytics and advertising
+        </h2>
+        <p>
+          Cadre does not embed third-party advertising SDKs or analytics trackers for
+          behavioral profiling in the app as described in this policy. Local notifications
+          you may receive (for example reminders) are scheduled on your device and are not
+          used to sell your data.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>
+          <span class="section-number" style="background:rgba(239,159,39,0.15);color:#EF9F27">7</span>
+          Children's privacy
+        </h2>
+        <p>
+          Cadre is not directed at children under 13 (or the minimum age required in your
+          region). We do not knowingly collect personal information from children for
+          marketing purposes.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>
+          <span class="section-number" style="background:rgba(99,153,34,0.15);color:#639922">8</span>
+          Changes and contact
+        </h2>
+        <p>
+          We may update this policy from time to time; the "Last updated" date will change
+          when we do.
+        </p>
+      </div>
+
+      <div class="contact-card">
+        <p>For questions about privacy or this app, reach out:</p>
+        <a href="mailto:support@cadrecamera.com">support@cadrecamera.com</a>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2026 Cadre · <a href="/">cadrecamera.com</a></p>
+    </footer>
+  </body>
+</html>
