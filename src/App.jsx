@@ -1,4 +1,4 @@
-import { Sparkles, LayoutGrid, Square, Camera, SlidersHorizontal, Share2 } from 'lucide-react'
+import { Sparkles, LayoutGrid, Square, Camera, SlidersHorizontal, Share2, ImageIcon } from 'lucide-react'
 
 // ─── Logo ────────────────────────────────────────────────────────────────────
 const BAR_COLORS = ['#E24B4A', '#EF9F27', '#639922', '#378ADD', '#7F77DD']
@@ -240,6 +240,47 @@ function HowItWorks() {
   )
 }
 
+// ─── Screenshots ──────────────────────────────────────────────────────────────
+function Screenshots() {
+  return (
+    <section className="py-24 px-6">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
+            See it in action.
+          </h2>
+          <p className="text-white/30 text-sm">
+            Drop your screenshots into the placeholders below.
+          </p>
+        </div>
+
+        <div className="flex items-end justify-center gap-2 sm:gap-8">
+          {[
+            { rotate: '-6deg', label: 'Screenshot 1', shadow: '0 24px 48px rgba(0,0,0,0.5)' },
+            { rotate: '0deg',  label: 'Screenshot 2', shadow: '0 32px 64px rgba(0,0,0,0.7)' },
+            { rotate: '6deg',  label: 'Screenshot 3', shadow: '0 24px 48px rgba(0,0,0,0.5)' },
+          ].map(({ rotate, label, shadow }) => (
+            <div
+              key={label}
+              className="flex flex-col items-center justify-center gap-3 bg-dark-photo border border-dark-photoborder text-white/20 flex-shrink-0"
+              style={{
+                width: 'clamp(100px, 22vw, 200px)',
+                aspectRatio: '9 / 19.5',
+                borderRadius: 'clamp(24px, 5vw, 40px)',
+                transform: `rotate(${rotate})`,
+                boxShadow: shadow,
+              }}
+            >
+              <ImageIcon aria-hidden="true" size={28} strokeWidth={1.5} />
+              <span className="text-xs">{label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 // ─── App ─────────────────────────────────────────────────────────────────────
 export default function App() {
   return (
@@ -248,6 +289,7 @@ export default function App() {
       <Hero />
       <Features />
       <HowItWorks />
+      <Screenshots />
     </div>
   )
 }
