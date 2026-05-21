@@ -284,7 +284,7 @@ function Screenshots() {
               alt={label}
               style={{
                 width: 'clamp(100px, 22vw, 220px)',
-                borderRadius: 16,
+                borderRadius: 4,
                 transform: `rotate(${rotate})`,
                 boxShadow: shadow,
                 display: 'block',
