@@ -1,4 +1,4 @@
-import { Sparkles, LayoutGrid, Square, Camera, SlidersHorizontal, Share2, X, Instagram, Mail } from 'lucide-react'
+import { Sparkles, LayoutGrid, Square, Camera, SlidersHorizontal, Share2, Instagram, Mail } from 'lucide-react'
 
 // ─── Logo ────────────────────────────────────────────────────────────────────
 const BAR_COLORS = ['#E24B4A', '#EF9F27', '#639922', '#378ADD', '#7F77DD']
@@ -305,21 +305,22 @@ function Footer() {
         </p>
 
         <div className="flex items-center gap-4">
-          {/* TODO: replace with real social URLs */}
-          {[
-            { Icon: X,   label: 'X (Twitter)' },
-            { Icon: Instagram, label: 'Instagram' },
-            { Icon: Mail,      label: 'Email' },
-          ].map(({ Icon, label }) => (
-            <a
-              key={label}
-              href="#"
-              aria-label={label}
-              className="text-white/30 hover:text-white transition-colors"
-            >
-              <Icon size={18} strokeWidth={1.75} />
-            </a>
-          ))}
+          <a
+            href="https://www.instagram.com/cadrecamera"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="text-white/30 hover:text-white transition-colors"
+          >
+            <Instagram size={18} strokeWidth={1.75} />
+          </a>
+          <a
+            href="mailto:support@cadrecamera.com"
+            aria-label="Email"
+            className="text-white/30 hover:text-white transition-colors"
+          >
+            <Mail size={18} strokeWidth={1.75} />
+          </a>
         </div>
       </div>
 
