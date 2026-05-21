@@ -1,4 +1,4 @@
-import { Sparkles, LayoutGrid, Square, Camera, SlidersHorizontal, Share2, ImageIcon, X, Instagram, Mail } from 'lucide-react'
+import { Sparkles, LayoutGrid, Square, Camera, SlidersHorizontal, Share2, X, Instagram, Mail } from 'lucide-react'
 
 // ─── Logo ────────────────────────────────────────────────────────────────────
 const BAR_COLORS = ['#E24B4A', '#EF9F27', '#639922', '#378ADD', '#7F77DD']
@@ -95,25 +95,27 @@ function Hero() {
       {/* Phone mockups */}
       <div className="relative z-10 mt-20 flex items-end justify-center gap-2 sm:gap-6">
         {[
-          { rotate: '-6deg', label: 'Mini' },
-          { rotate: '0deg',  label: 'Square' },
-          { rotate: '6deg',  label: 'Wide' },
-        ].map(({ rotate, label }) => (
+          { rotate: '-6deg', label: 'Mini',   src: '/images/mini.jpg'   },
+          { rotate: '0deg',  label: 'Square', src: '/images/square.jpg' },
+          { rotate: '6deg',  label: 'Wide',   src: '/images/wide.jpg'   },
+        ].map(({ rotate, label, src }) => (
           <div
             key={label}
-            className="flex flex-col items-center justify-center gap-2 bg-dark-photo border border-dark-photoborder text-white/20"
             style={{
               width: 'clamp(90px, 28vw, 140px)',
               aspectRatio: '9 / 19.5',
               borderRadius: 'clamp(20px, 4vw, 28px)',
               transform: `rotate(${rotate})`,
               boxShadow: '0 32px 64px rgba(0,0,0,0.6)',
+              overflow: 'hidden',
+              flexShrink: 0,
             }}
           >
-            <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <rect x="3" y="3" width="18" height="18" rx="2" />
-            </svg>
-            <span className="text-xs">{label}</span>
+            <img
+              src={src}
+              alt={`Cadre ${label} frame`}
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+            />
           </div>
         ))}
       </div>
@@ -262,23 +264,27 @@ function Screenshots() {
 
         <div className="flex items-end justify-center gap-2 sm:gap-8">
           {[
-            { rotate: '-6deg', label: 'Screenshot 1', shadow: '0 24px 48px rgba(0,0,0,0.5)' },
-            { rotate: '0deg',  label: 'Screenshot 2', shadow: '0 32px 64px rgba(0,0,0,0.7)' },
-            { rotate: '6deg',  label: 'Screenshot 3', shadow: '0 24px 48px rgba(0,0,0,0.5)' },
-          ].map(({ rotate, label, shadow }) => (
+            { rotate: '-6deg', src: '/images/ss1.jpg', shadow: '0 24px 48px rgba(0,0,0,0.5)', label: 'Screenshot 1' },
+            { rotate: '0deg',  src: '/images/ss2.jpg', shadow: '0 32px 64px rgba(0,0,0,0.7)', label: 'Screenshot 2' },
+            { rotate: '6deg',  src: '/images/ss3.jpg', shadow: '0 24px 48px rgba(0,0,0,0.5)', label: 'Screenshot 3' },
+          ].map(({ rotate, src, shadow, label }) => (
             <div
               key={label}
-              className="flex flex-col items-center justify-center gap-3 bg-dark-photo border border-dark-photoborder text-white/20 flex-shrink-0"
+              className="flex-shrink-0"
               style={{
                 width: 'clamp(100px, 22vw, 200px)',
                 aspectRatio: '9 / 19.5',
                 borderRadius: 'clamp(24px, 5vw, 40px)',
                 transform: `rotate(${rotate})`,
                 boxShadow: shadow,
+                overflow: 'hidden',
               }}
             >
-              <ImageIcon aria-hidden="true" size={28} strokeWidth={1.5} />
-              <span className="text-xs">{label}</span>
+              <img
+                src={src}
+                alt={label}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+              />
             </div>
           ))}
         </div>
