@@ -100,7 +100,7 @@ function Hero() {
             <img
               src="/images/mini.jpg"
               alt="Cadre Mini frame"
-              className="w-full rounded-2xl"
+              className="w-full rounded"
               style={{ boxShadow: '0 16px 40px rgba(0,0,0,0.55)' }}
             />
             <span className="text-center text-xs text-white/30 tracking-wide">Mini</span>
@@ -112,7 +112,7 @@ function Hero() {
               <img
                 src="/images/wide.jpg"
                 alt="Cadre Wide frame"
-                className="w-full rounded-2xl"
+                className="w-full rounded"
                 style={{ boxShadow: '0 16px 40px rgba(0,0,0,0.55)' }}
               />
               <span className="text-center text-xs text-white/30 tracking-wide">Wide</span>
@@ -121,7 +121,7 @@ function Hero() {
               <img
                 src="/images/square.jpg"
                 alt="Cadre Square frame"
-                className="w-full rounded-2xl"
+                className="w-full rounded"
                 style={{ boxShadow: '0 16px 40px rgba(0,0,0,0.55)' }}
               />
               <span className="text-center text-xs text-white/30 tracking-wide">Square</span>
