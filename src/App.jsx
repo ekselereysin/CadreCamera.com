@@ -93,26 +93,41 @@ function Hero() {
       </div>
 
       {/* Phone mockups */}
-      <div className="relative z-10 mt-20 flex items-end justify-center gap-4 sm:gap-8">
-        {[
-          { rotate: '-5deg', label: 'Mini',   src: '/images/mini.jpg'   },
-          { rotate: '0deg',  label: 'Square', src: '/images/square.jpg' },
-          { rotate: '5deg',  label: 'Wide',   src: '/images/wide.jpg'   },
-        ].map(({ rotate, label, src }) => (
-          <img
-            key={label}
-            src={src}
-            alt={`Cadre ${label} frame`}
-            style={{
-              width: 'clamp(100px, 28vw, 200px)',
-              borderRadius: 16,
-              transform: `rotate(${rotate})`,
-              boxShadow: '0 24px 56px rgba(0,0,0,0.6)',
-              display: 'block',
-              flexShrink: 0,
-            }}
-          />
-        ))}
+      <div className="relative z-10 mt-20 w-full max-w-lg mx-auto px-4">
+        <div className="grid grid-cols-2 gap-3">
+          {/* Left — Mini */}
+          <div className="flex flex-col gap-2">
+            <img
+              src="/images/mini.jpg"
+              alt="Cadre Mini frame"
+              className="w-full rounded-2xl"
+              style={{ boxShadow: '0 16px 40px rgba(0,0,0,0.55)' }}
+            />
+            <span className="text-center text-xs text-white/30 tracking-wide">Mini</span>
+          </div>
+
+          {/* Right — Wide + Square */}
+          <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-2">
+              <img
+                src="/images/wide.jpg"
+                alt="Cadre Wide frame"
+                className="w-full rounded-2xl"
+                style={{ boxShadow: '0 16px 40px rgba(0,0,0,0.55)' }}
+              />
+              <span className="text-center text-xs text-white/30 tracking-wide">Wide</span>
+            </div>
+            <div className="flex flex-col gap-2">
+              <img
+                src="/images/square.jpg"
+                alt="Cadre Square frame"
+                className="w-full rounded-2xl"
+                style={{ boxShadow: '0 16px 40px rgba(0,0,0,0.55)' }}
+              />
+              <span className="text-center text-xs text-white/30 tracking-wide">Square</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )
