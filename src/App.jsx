@@ -93,30 +93,25 @@ function Hero() {
       </div>
 
       {/* Phone mockups */}
-      <div className="relative z-10 mt-20 flex items-end justify-center gap-2 sm:gap-6">
+      <div className="relative z-10 mt-20 flex items-end justify-center gap-4 sm:gap-8">
         {[
-          { rotate: '-6deg', label: 'Mini',   src: '/images/mini.jpg'   },
+          { rotate: '-5deg', label: 'Mini',   src: '/images/mini.jpg'   },
           { rotate: '0deg',  label: 'Square', src: '/images/square.jpg' },
-          { rotate: '6deg',  label: 'Wide',   src: '/images/wide.jpg'   },
+          { rotate: '5deg',  label: 'Wide',   src: '/images/wide.jpg'   },
         ].map(({ rotate, label, src }) => (
-          <div
+          <img
             key={label}
+            src={src}
+            alt={`Cadre ${label} frame`}
             style={{
-              width: 'clamp(90px, 28vw, 140px)',
-              aspectRatio: '9 / 19.5',
-              borderRadius: 'clamp(20px, 4vw, 28px)',
+              width: 'clamp(100px, 28vw, 200px)',
+              borderRadius: 16,
               transform: `rotate(${rotate})`,
-              boxShadow: '0 32px 64px rgba(0,0,0,0.6)',
-              overflow: 'hidden',
+              boxShadow: '0 24px 56px rgba(0,0,0,0.6)',
+              display: 'block',
               flexShrink: 0,
             }}
-          >
-            <img
-              src={src}
-              alt={`Cadre ${label} frame`}
-              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-            />
-          </div>
+          />
         ))}
       </div>
     </section>
@@ -262,30 +257,25 @@ function Screenshots() {
           </p>
         </div>
 
-        <div className="flex items-end justify-center gap-2 sm:gap-8">
+        <div className="flex items-end justify-center gap-4 sm:gap-10">
           {[
-            { rotate: '-6deg', src: '/images/ss1.jpg', shadow: '0 24px 48px rgba(0,0,0,0.5)', label: 'Screenshot 1' },
+            { rotate: '-5deg', src: '/images/ss1.jpg', shadow: '0 24px 48px rgba(0,0,0,0.5)', label: 'Screenshot 1' },
             { rotate: '0deg',  src: '/images/ss2.jpg', shadow: '0 32px 64px rgba(0,0,0,0.7)', label: 'Screenshot 2' },
-            { rotate: '6deg',  src: '/images/ss3.jpg', shadow: '0 24px 48px rgba(0,0,0,0.5)', label: 'Screenshot 3' },
+            { rotate: '5deg',  src: '/images/ss3.jpg', shadow: '0 24px 48px rgba(0,0,0,0.5)', label: 'Screenshot 3' },
           ].map(({ rotate, src, shadow, label }) => (
-            <div
+            <img
               key={label}
-              className="flex-shrink-0"
+              src={src}
+              alt={label}
               style={{
-                width: 'clamp(100px, 22vw, 200px)',
-                aspectRatio: '9 / 19.5',
-                borderRadius: 'clamp(24px, 5vw, 40px)',
+                width: 'clamp(100px, 22vw, 220px)',
+                borderRadius: 16,
                 transform: `rotate(${rotate})`,
                 boxShadow: shadow,
-                overflow: 'hidden',
+                display: 'block',
+                flexShrink: 0,
               }}
-            >
-              <img
-                src={src}
-                alt={label}
-                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-              />
-            </div>
+            />
           ))}
         </div>
       </div>
