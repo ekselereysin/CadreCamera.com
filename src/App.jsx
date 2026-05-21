@@ -94,7 +94,7 @@ function Hero() {
 
       {/* Phone mockups */}
       <div className="relative z-10 mt-20 w-full max-w-lg mx-auto px-4">
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 gap-3 items-center">
           {/* Left — Mini */}
           <div className="flex flex-col gap-2">
             <img
